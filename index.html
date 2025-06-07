@@ -3,44 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Danny Ali - Xbox 360 Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Danny Ali.exe</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="dashboard">
-    <header class="dashboard-header">
-      <h1>Danny Ali</h1>
-    </header>
+  <!-- Horizontal Taskbar of Icons -->
+  <div class="desktop-bar">
+    <div class="desktop-icon">
+      <img src="win95_icons/music (1).png" alt="Music Icon" />
+      <span><a href="#music">New Music</a></span>
+    </div>
+    <div class="desktop-icon">
+      <img src="win95_icons/events (1).png" alt="Events Icon" />
+      <span><a href="#events">Events</a></span>
+    </div>
+    <div class="desktop-icon">
+      <img src="win95_icons/merch (1).png" alt="Merch Icon" />
+      <span><a href="#merch">Merch</a></span>
+    </div>
+    <div class="desktop-icon">
+      <img src="win95_icons/booking (1).png" alt="Booking Icon" />
+      <span><a href="#booking">Booking</a></span>
+    </div>
+    <div class="desktop-icon">
+      <img src="win95_icons/videos (1).png" alt="Videos Icon" />
+      <span><a href="#videos">Videos</a></span>
+    </div>
+    <div class="desktop-icon">
+      <img src="win95_icons/mixtape.png" alt="Mixtape Icon" />
+      <span><a href="#mixtape">Mixtape Preview</a></span>
+    </div>
 
-    <div class="dashboard-row">
-      <div class="dashboard-tile green">
-        <h2>🎵 New Music</h2>
-        <a href="https://venice.lnk.to/rippin-the-seams" target="_blank">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXwn0zRDseeArBrG_9Mz_J7Rcl7yLWYNsaUg&s" alt="New Music">
+  </div>
+
+  <!-- Windows for each section -->
+  <div class="section-windows">
+  <!-- Exclusive Mixtape Preview -->
+  <div class="window" id="mixtape">
+    <div class="title-bar">
+      <div class="title-bar-text">💿 Exclusive Mixtape Preview</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body" style="text-align: center;">
+      <p style="margin-bottom: 12px;">Support the drop and unlock the full mixtape experience + live chat:</p>
+      <button 
+        style="font-size: 16px; padding: 12px 24px; background-color: #f7931e; color: white; border: none; cursor: pointer; margin-bottom: 8px;" 
+        onclick="window.location.href='https://buy.stripe.com/YOUR_PAYMENT_LINK'">
+        🎵 Pay What You Want To Unlock 🎵
+      </button>
+      <p style="font-size: 13px;">(You'll be redirected to the Mixtape Player + Chat after payment)</p>
+    </div>
+  </div>
+
+    <!-- New Music -->
+    <div class="window" id="music">
+      <div class="title-bar">
+        <div class="title-bar-text">🎵 New Music</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <img src="win95_icons/IMG_5199.JPG" alt="RIPPIN THE SEAMS Cover Art" class="cover-art" />
+        <a href="https://venice.lnk.to/rippin-the-seams" target="_blank" class="btn-95">
+          Listen to “RIPPIN THE SEAMS”
         </a>
       </div>
+    </div>
 
-      <div class="dashboard-tile gray">
-        <h2>📅 Events</h2>
-        <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
-        <a class="bit-widget-initializer" data-artist-name="id_14219875"></a>
+    <!-- Upcoming Events -->
+    <div class="window-body">
+  <style>
+    .bit-widget-wrapper {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  </style>
+  <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
+  <div class="bit-widget-wrapper">
+    <a
+      class="bit-widget-initializer"
+      data-artist-name="id_14219875"
+      data-background-color="rgba(240,240,240,1)"
+      data-separator-color="rgba(200,200,200,1)"
+      data-text-color="rgba(32,32,32,1)"
+      data-font="Tahoma"
+      data-auto-style="true"
+      data-date-format="MMM. D, YYYY"
+      data-date-orientation="horizontal"
+      data-event-ticket-text="TICKETS"
+      data-event-rsvp-text="RSVP"
+    ></a>
+  </div>
+</div>
+
+
+    <!-- Merch -->
+    <div class="window" id="merch">
+      <div class="title-bar">
+        <div class="title-bar-text">🛍️ Merch</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
       </div>
-
-      <div class="dashboard-tile green">
-        <h2>🛍️ Merch</h2>
-        <a href="https://buy.stripe.com/bIY3eMfhs2zibQs5kz?utm_source=hoobe&utm_medium=social" target="_blank">
-          <img src="https://stripe-camo.global.ssl.fastly.net/b2ae99081b6cbef79be59973100b0abac16cd6bbf5a7272d5c43694827625ac8/68747470733a2f2f66696c65732e7374726970652e636f6d2f6c696e6b732f4d44423859574e6a64463878546c706d53444248596a566e596a5a5a65554a4b66475a7358327870646d5666646b354c4d314e6159586c7263466331544531744d31644a65566f786446566d30307a356d3973364b78/6d65726368616e745f69643d616363745f314e5a6648304762356762365979424a26636c69656e743d5041594d454e545f50414745" alt="Merch">
+      <div class="window-body">
+        <img
+          src="https://stripe-camo.global.ssl.fastly.net/b2ae99081b6cbef79be59973100b0abac16cd6bbf5a7272d5c43694827625ac8/68747470733a2f2f66696c65732e7374726970652e636f6d2f6c696e6b732f4d44423859574e6a64463878546c706d53444248596a566e596a5a5a65554a4b66475a7358327870646d5666646b354c4d314e6159586c7263466331544531744d31644a65566f786446566d30307a356d3973364b78/6d65726368616e745f69643d616363745f314e5a6648304762356762365979424a26636c69656e743d5041594d454e545f50414745"
+          alt="Merch"
+          class="merch-art"
+        />
+        <a href="https://buy.stripe.com/bIY3eMfhs2zibQs5kz?utm_source=hoobe&utm_medium=social" target="_blank" class="btn-95">
+          Visit Store
         </a>
       </div>
+    </div>
 
-      <div class="dashboard-tile gray">
-        <h2>📨 Booking</h2>
-        <a href="https://forms.gle/Ue33SxfWCyrTPzgL6" target="_blank" class="button">Book Now</a>
+    <!-- Booking -->
+    <div class="window" id="booking">
+      <div class="title-bar">
+        <div class="title-bar-text">📨 Booking</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
       </div>
+      <div class="window-body">
+        <a href="https://forms.gle/Ue33SxfWCyrTPzgL6" target="_blank" class="btn-95">
+          Book Danny Ali
+        </a>
+      </div>
+    </div>
+    <!-- Stream -->
+<div class="window" id="twitch">
+  <div class="title-bar">
+    <div class="title-bar-text">📺 Live on Twitch</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class="twitch-wrapper">
+      <iframe
+        src="https://player.twitch.tv/?channel=1dannyali&parent=yourdomain.com"
+        height="300"
+        width="100%"
+        frameborder="0"
+        allowfullscreen="true"
+        scrolling="no"
+      ></iframe>
+      <p style="margin-top: 8px;">
+        <a href="https://twitch.tv/1dannyali" target="_blank" class="btn-95">Watch on Twitch</a>
+      </p>
+    </div>
+  </div>
+</div>
 
-      <div class="dashboard-tile green">
-        <h2>📹 Videos</h2>
-        <iframe src="https://www.youtube.com/embed/3f4sWmZEUDk" frameborder="0" allowfullscreen></iframe>
+    <!-- Videos -->
+    <div class="window" id="videos">
+      <div class="title-bar">
+        <div class="title-bar-text">📹 Videos</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <iframe
+          src="https://www.youtube.com/embed/3f4sWmZEUDk"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </div>
