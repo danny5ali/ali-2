@@ -1,72 +1,129 @@
-body {
+
+/* Reset */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(#1b1b1b, #101010);
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.dashboard {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+/* Body styling */
+body {
+  background: #008080;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+  overflow-x: hidden;
 }
 
-.dashboard-header {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.dashboard-row {
+/* Horizontal icon bar at the top */
+.desktop-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: row;
+  gap: 32px;
+  background: #008080;
+  padding: 20px 20px 10px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.dashboard-tile {
-  background: #2a2a2a;
-  border-radius: 10px;
-  padding: 15px;
-  width: 280px;
-  min-height: 250px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+/* Each desktop icon */
+.desktop-icon {
+  text-align: center;
+  width: 80px;
+  cursor: pointer;
+}
+
+.desktop-icon img {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #ffffff;
+  background: #c0c0c0;
+  border-radius: 4px;
+}
+
+.desktop-icon span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #ffffff;
+  text-shadow: 1px 1px #000;
+}
+
+.desktop-icon a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Windows below the bar */
+.section-windows {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  transition: transform 0.2s ease;
+  gap: 24px;
+  padding: 20px;
 }
 
-.dashboard-tile.green {
-  background: linear-gradient(to bottom right, #7dc21e, #567f10);
+/* Individual windows */
+.window {
+  width: 600px;
 }
 
-.dashboard-tile.gray {
-  background: linear-gradient(to bottom right, #3a3a3a, #2a2a2a);
+.window-body {
+  padding: 12px;
 }
 
-.dashboard-tile:hover {
-  transform: scale(1.03);
-}
-
-.dashboard-tile img {
+/* Images */
+.cover-art,
+.merch-art {
   max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+  border: 2px solid #c0c0c0;
+  margin-bottom: 12px;
 }
 
-.dashboard-tile iframe {
-  width: 100%;
-  height: 160px;
-  border-radius: 8px;
-}
-
-.button {
-  background: #10a22d;
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
+/* Button styling */
+.btn-95 {
   display: inline-block;
+  padding: 6px 16px;
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  font-size: 0.9rem;
+  color: #000;
+  text-decoration: none;
+  font-family: 'Tahoma', sans-serif;
+  box-shadow: 1px 1px 0 #ffffff inset;
+  border-radius: 2px;
+}
+
+.btn-95:active {
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+/* YouTube iframe */
+.window iframe {
+  width: 100%;
+  height: 320px;
+  border: 2px solid #808080;
+  border-radius: 2px;
+  background: #000;
+}
+@media (max-width: 768px) {
+  .desktop-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  .window {
+    width: 90vw; /* Make windows fit mobile screen */
+  }
+
+  .window iframe {
+    height: 200px; /* smaller Twitch/YT embeds on mobile */
+  }
+
+  .cover-art,
+  .merch-art {
+    width: 100%;
+    height: auto;
+  }
 }
